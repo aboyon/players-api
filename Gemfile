@@ -28,6 +28,14 @@ gem 'spring',        group: :development
 
 group :test do
   gem "rspec-rails"
+  gem "database_cleaner"
+end
+
+group :test, :development do
+  gem 'spring-commands-rspec'
+  gem 'pry-debugger'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 gem "seed_migration"
