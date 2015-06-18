@@ -30,6 +30,7 @@ module ApiTest
     config.generators do |g|
       g.assets false
       g.test_framework :rspec
+      g.factory_girl dir: 'spec/factories'
     end
   end
 end
