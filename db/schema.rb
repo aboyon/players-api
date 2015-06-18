@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150618200522) do
+ActiveRecord::Schema.define(version: 20150618201156) do
 
   create_table "clubs", force: true do |t|
     t.string   "name"
@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 20150618200522) do
     t.string   "version"
     t.integer  "runtime"
     t.datetime "migrated_on"
+  end
+
+  create_table "tournaments", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
