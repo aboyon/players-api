@@ -1,4 +1,4 @@
-class Api::V1::PlayersController < ApplicationController
+class Api::V1::PlayersController < Api::V1::BaseController
   include Api::V1::Concerns::Common
 
   def show

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   namespace :api, constraints: { format: 'json' } do
     namespace :v1 do
-      resources :players
-      resources :teams
+      resources :players, :defaults => {:format => :json}
+      resources :teams, :defaults => {:format => :json}
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

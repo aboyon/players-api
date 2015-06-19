@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/rails-api/rails-api.git
+  revision: f43189a9d123f6b2638de4a732ea9105a5c46aa4
+  specs:
+    rails-api (0.4.0)
+      actionpack (>= 3.2.11)
+      railties (>= 3.2.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -133,6 +141,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   pry-debugger
   rails (= 4.1.10)
+  rails-api!
   rspec-rails
   sdoc (~> 0.4.0)
   seed_migration
