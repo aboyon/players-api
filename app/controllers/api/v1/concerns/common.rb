@@ -1,4 +1,4 @@
-module Api::V1::Common
+module Api::V1::Concerns::Common
   extend ActiveSupport::Concern
 
   included do
@@ -12,6 +12,6 @@ module Api::V1::Common
 
   protected
   def model
-    self.demodulize.gsub('Controller','').singularize.constantize
+    self.class.name.demodulize.gsub('Controller','').singularize.constantize
   end
 end
