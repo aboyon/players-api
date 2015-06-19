@@ -2,6 +2,7 @@ class Match < ActiveRecord::Base
   belongs_to :local_team, :class => Team
   belongs_to :visitor_team,  :class => Team
   validate :not_same_team
+  validates_presence_of :date
 
   protected
   def not_same_team
