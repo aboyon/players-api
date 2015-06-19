@@ -6,6 +6,6 @@ class Api::V1::PlayersController < ApplicationController
   end
 
   def index
-    respond_with Player.all
+    respond_with @players
   end
 end

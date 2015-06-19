@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :api, constraints: { format: 'json' } do
     namespace :v1 do
       resources :players
+      resources :teams
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

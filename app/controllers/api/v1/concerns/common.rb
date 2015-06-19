@@ -3,6 +3,7 @@ module Api::V1::Concerns::Common
 
   included do
     before_filter :load_subject, :only =>  [:show, :update]
+    before_filter :load_subjects, :only =>  [:index]
     respond_to :json
   end
 
@@ -13,6 +14,10 @@ module Api::V1::Concerns::Common
     rescue ActiveRecord::RecordNotFound
       head :status => 404
     end
+  end
+
+  def load_subjects
+    instance_variable_set("@#{model}s".downcase, model.all)
   end
 
   protected
