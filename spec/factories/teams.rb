@@ -1,7 +1,7 @@
 FactoryGirl.define do
-  factory :club do
+  factory :team do
     sequence :name do |n|
-      "Club Name #{n}"
+      "Team Name #{n}"
     end
   end
 end

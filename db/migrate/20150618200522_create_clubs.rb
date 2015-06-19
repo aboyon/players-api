@@ -1,6 +1,6 @@
 class CreateClubs < ActiveRecord::Migration
   def change
-    create_table :clubs do |t|
+    create_table :teams do |t|
       t.string :name
 
       t.timestamps
