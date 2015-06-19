@@ -32,5 +32,6 @@ module ApiTest
       g.test_framework :rspec
       g.factory_girl dir: 'spec/factories'
     end
+
   end
 end
