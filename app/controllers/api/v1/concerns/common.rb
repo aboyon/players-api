@@ -7,7 +7,12 @@ module Api::V1::Concerns::Common
   end
 
   def load_subject
-    instance_variable_set("@#{model}", model.find(params[:id]))
+    begin
+      subject = model.find(params[:id])
+      instance_variable_set("@#{model}".downcase, subject)
+    rescue ActiveRecord::RecordNotFound
+      head :status => 404
+    end
   end
 
   protected

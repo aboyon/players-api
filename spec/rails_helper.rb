@@ -23,4 +23,5 @@ RSpec.configure do |config|
     mocks.syntax = [:should, :expect]
   end
 
+  config.infer_spec_type_from_file_location!
 end
