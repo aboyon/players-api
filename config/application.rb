@@ -34,5 +34,7 @@ module ApiTest
       g.factory_girl dir: 'spec/factories'
     end
 
+    config.autoload_paths += %W(#{config.root}/app/responders)
+
   end
 end
