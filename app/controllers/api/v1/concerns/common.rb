@@ -36,7 +36,7 @@ module Api::V1::Concerns::Common
   end
 
   def load_subjects
-    instance_variable_set("@#{model}s".downcase, model.all)
+    instance_variable_set("@#{model}".downcase.pluralize, model.all)
   end
 
   protected

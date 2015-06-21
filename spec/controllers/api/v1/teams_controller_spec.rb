@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe Api::V1::TeamsController do
+  render_views
   before { set_json_format_for_request }
 
   let(:team) { create :team }

@@ -19,10 +19,10 @@ class Api::V1::TeamsController < Api::V1::BaseController
 
   protected
   def create_subject_params
-  	params.permit(:name)
+    params.permit(:name)
   end
 
   def update_subject_params
-  	params.permit(:name)
+    params.permit(:name)
   end
 end

@@ -4,7 +4,7 @@ module JsonFormat
   end
 
   def json_hash
-    JSON.parse(@response.body).with_indifferent_access
+    JSON.parse(@response.body).try(:with_indifferent_access)
   end
 
   def json_response

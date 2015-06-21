@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :players, :defaults => {:format => :json}, :only => [:create, :show, :update, :index]
       resources :teams  , :defaults => {:format => :json}, :only => [:create, :show, :update, :index]
-      resources :matches, :defaults => {:format => :json}, :only => [:create, :show, :update, :index]
+      resources :matches, :defaults => {:format => :json}, :only => [:create, :show, :index]
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
