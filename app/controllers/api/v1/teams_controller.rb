@@ -13,8 +13,16 @@ class Api::V1::TeamsController < Api::V1::BaseController
     respond_with @team, :status => :created
   end
 
+  def update
+    respond_with @team, :status => 204
+  end
+
   protected
   def create_subject_params
+  	params.permit(:name)
+  end
+
+  def update_subject_params
   	params.permit(:name)
   end
 end

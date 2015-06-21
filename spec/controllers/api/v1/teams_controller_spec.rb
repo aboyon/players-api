@@ -44,4 +44,20 @@ describe Api::V1::TeamsController do
     end
   end
 
+  context "UPDATE" do
+    let(:params) { { :name => "#{Faker::Name.first_name} FC" } }
+
+    it "should update a team" do
+      put :update, params.merge(:id => team.id)
+      expect(response.status).to eq 204
+    end
+
+    it "should not allow to update a team" do
+      params[:name] = ""
+      put :update, params.merge(:id => team.id)
+      expect(response.status).to eq 422
+      expect(json_hash.keys).to include("error")
+    end
+  end
+
 end
