@@ -27,4 +27,21 @@ describe Api::V1::TeamsController do
     end
   end
 
+  context "POST" do
+    let(:params) { {:name => "#{Faker::Name.first_name} FC"} }
+
+    it "should create a team" do
+      post :create, params
+      expect(response.status).to eq 201
+      expect(json_hash[:name]).to eq(params[:name])
+    end
+
+    it "should not allow to create a user" do
+      params.delete(:name)
+      post :create, params
+      expect(response.status).to eq 422
+      expect(json_hash.keys).to include("error")
+    end
+  end
+
 end
