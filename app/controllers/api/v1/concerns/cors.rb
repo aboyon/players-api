@@ -1,7 +1,7 @@
 module Api::V1::Concerns::Cors
   extend ActiveSupport::Concern
 
-  CORS_DOMAINS = ["http://localhost:8000/"]
+  CORS_DOMAINS = ["http://localhost:8000"]
 
   included do
     before_filter :cors_preflight_check
