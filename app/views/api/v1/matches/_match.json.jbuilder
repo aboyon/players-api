@@ -1,4 +1,4 @@
-json.(match, :date)
+json.(match, :date, :id)
 json.local do
   json.name match.local_team.name
   json.id match.local_team_id
