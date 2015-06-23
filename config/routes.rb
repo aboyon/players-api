@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   namespace :api, constraints: { format: 'json' } do
     namespace :v1 do
+      match "players"     => "base#cors_preflight_check", via: [:options]
+      match "players/:id" => "base#cors_preflight_check", via: [:options]
+      match "teams"       => "base#cors_preflight_check", via: [:options]
+      match "teams/:id"   => "base#cors_preflight_check", via: [:options]
+      match "matches"     => "base#cors_preflight_check", via: [:options]
+      match "matches/:id" => "base#cors_preflight_check", via: [:options]
       resources :players, :defaults => {:format => :json}, :only => [:create, :show, :update, :index]
       resources :teams  , :defaults => {:format => :json}, :only => [:create, :show, :update, :index]
       resources :matches, :defaults => {:format => :json}, :only => [:create, :show, :index]
