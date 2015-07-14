@@ -11,4 +11,22 @@ describe Tournament, type: :model do
     tournament = Tournament.create(:name => "")
     expect(tournament.persisted?).to eq false
   end
+
+  it "is already ended" do
+    tournament.year = 1999
+    expect(tournament.ended?).to eq true
+  end
+
+  it "has not a champion yet" do
+    tournament.teams << create(:team)
+    tournament.teams << create(:team)
+    expect(tournament.champion).to be_nil
+  end
+
+  it "has a champion" do
+    tournament.teams << create(:team)
+    tournament.teams << create(:team)
+    tournament.team_tournaments.first.update_attributes(:position => 1)
+    expect(tournament.champion).to eq(tournament.team_tournaments.first)
+  end
 end
