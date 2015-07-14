@@ -11,4 +11,10 @@ describe Player, type: :model do
     player = Player.create(:name => "")
     expect(player.persisted?).to eq false
   end
+
+  it "can't be created if younger 18 years" do
+    player = Player.create(:name => "Hernan and David", :dob => 10.years.ago)
+    expect(player.persisted?).to eq false
+    expect(player.errors.keys).to include(:too_younger)
+  end
 end
