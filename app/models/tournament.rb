@@ -11,6 +11,6 @@ class Tournament < ActiveRecord::Base
   end
 
   def champion
-    @champion||= team_tournaments.find_by(:position => 1)
+    @champion||= team_tournaments.find_by(:position => 1).try(:team)
   end
 end
