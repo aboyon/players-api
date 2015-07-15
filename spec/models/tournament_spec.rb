@@ -29,7 +29,6 @@ describe Tournament, type: :model do
     tournament.team_tournaments.first.update_attributes(:position => 1)
     champ = tournament.team_tournaments.first.team
     expect(tournament.champion).to eq(champ)
-    binding.pry
     expect(champ.honours).to include(tournament)
   end
 end
